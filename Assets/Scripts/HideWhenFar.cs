@@ -4,7 +4,7 @@ namespace AC9649
 {
     public class HideWhenFar : MonoBehaviour
     {
-        public Camera cmr;
+        private Camera cmr;
         public float hideDistance = 5.0f;
         public float hideSparkle = 10.0f;
         private GameObject self;
@@ -12,6 +12,12 @@ namespace AC9649
         void Start()
         {
             self = gameObject;
+            cmr = Camera.main;
+
+            if (cmr == null)
+            {
+                Debug.LogError("sparkles need to find the camera to function");
+            }
             sparkle = self.GetComponentInChildren<ParticleSystem>();
         }
         void Update()
