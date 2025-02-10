@@ -1,3 +1,4 @@
+using UnityEditor.Rendering;
 using UnityEngine;
 
 
@@ -14,9 +15,9 @@ namespace AC9649
             {
                 int randomIndex = Random.Range(0, listOfSpawnable.Length);
                 GameObject toSpawn = listOfSpawnable[randomIndex];
-                //toSpawn.GetComponents<HideWhenFar>()[0].cmr = cmr;
-                Instantiate(toSpawn, transform.position, transform.rotation);
-
+                GameObject self = gameObject;
+                //toSpawn.transform.SetParent(self.transform);
+                Instantiate(toSpawn, transform.position, transform.rotation, self.transform);
             }
         }
     }

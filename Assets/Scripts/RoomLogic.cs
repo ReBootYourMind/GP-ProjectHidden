@@ -14,6 +14,7 @@ namespace AC9649
             for (int i = 0; i < furnitureSpawners.Length; i++)
             {
                 GameObject toSpawn = furnitureSpawners[i];
+                //TODO add optinal spawning
             }
         }
     }

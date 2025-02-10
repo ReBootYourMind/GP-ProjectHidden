@@ -13,8 +13,8 @@ namespace AC9649
             Debug.Log("furniture runs");
             int randomIndex = UnityEngine.Random.Range(0, possibleFurniture.Length);
             GameObject toSpawn = possibleFurniture[randomIndex];
-    
-            Instantiate(toSpawn, transform.position, transform.rotation);
+            GameObject self = gameObject;
+            Instantiate(toSpawn, transform.position, transform.rotation, self.transform);
         }
     }
 }

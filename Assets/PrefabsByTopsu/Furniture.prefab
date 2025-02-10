@@ -47,5 +47,5 @@ MonoBehaviour:
   possibleFurniture:
   - {fileID: 8298995997774026406, guid: 5d04fd7abc2ec234eae901c003da3714, type: 3}
   - {fileID: 387048173458421255, guid: 848be81b36527034ea3bd449b04c6bda, type: 3}
+  - {fileID: 7984945589879990274, guid: a39e83befee3116438ab3f449c91e6ed, type: 3}
   howManyFindableToSpawn: 1
-  cmr: {fileID: 0}
