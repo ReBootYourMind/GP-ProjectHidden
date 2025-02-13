@@ -254,8 +254,8 @@ Transform:
   - {fileID: 2123742262505413744}
   - {fileID: 2134803216604906817}
   - {fileID: 2378194125150798985}
-  - {fileID: 3990741467014865245}
   - {fileID: 1048390142685943872}
+  - {fileID: 3990741467014865245}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &-3212587461783903013
@@ -273,7 +273,9 @@ MonoBehaviour:
   furnitureSpawners:
   - {fileID: 3810977447490187126}
   - {fileID: 595070047122976446}
-  howManyFurnitureToSpawn: 1
+  - {fileID: 2868712411788259959}
+  - {fileID: 2171546196242467690}
+  howManyFurnitureToSpawn: 2
 --- !u!1 &2744456288905643948
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,6 +856,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd792e5c9420e2f4ba82def7973d8f09, type: 3}
+--- !u!1 &2171546196242467690 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5124898458196686285, guid: cd792e5c9420e2f4ba82def7973d8f09,
+    type: 3}
+  m_PrefabInstance: {fileID: 6430483018546200231}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3990741467014865245 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7952332215847165946, guid: cd792e5c9420e2f4ba82def7973d8f09,
@@ -931,6 +939,12 @@ PrefabInstance:
 --- !u!4 &1048390142685943872 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7952332215847165946, guid: cd792e5c9420e2f4ba82def7973d8f09,
+    type: 3}
+  m_PrefabInstance: {fileID: 6976354290854397882}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2868712411788259959 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5124898458196686285, guid: cd792e5c9420e2f4ba82def7973d8f09,
     type: 3}
   m_PrefabInstance: {fileID: 6976354290854397882}
   m_PrefabAsset: {fileID: 0}

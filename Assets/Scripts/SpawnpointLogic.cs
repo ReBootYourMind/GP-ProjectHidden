@@ -7,8 +7,8 @@ namespace AC9649
     public class SpawnpointLogic : MonoBehaviour
     {
         //public Camera cmr;
-        public GameObject[] listOfSpawnable;
-        public bool willItSpawn = true;
+        [SerializeField] private GameObject[] listOfSpawnable;
+        [SerializeField] private bool willItSpawn = true;
         void Start()
         {
             if (willItSpawn)

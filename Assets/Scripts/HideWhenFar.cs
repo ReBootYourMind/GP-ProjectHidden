@@ -5,8 +5,8 @@ namespace AC9649
     public class HideWhenFar : MonoBehaviour
     {
         private Camera cmr;
-        public float hideDistance = 5.0f;
-        public float hideSparkle = 10.0f;
+        [SerializeField] private float hideDistance = 5.0f;
+        [SerializeField] private float hideSparkle = 10.0f;
         private GameObject self;
         private ParticleSystem sparkle;
         void Start()
