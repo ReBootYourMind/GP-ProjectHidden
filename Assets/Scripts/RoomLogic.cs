@@ -9,9 +9,10 @@ namespace AC9649
     {
         [SerializeField] private GameObject[] furnitureSpawners;
         [SerializeField] private List<Material> wallPapers;
-        [SerializeField] private int howManyFurnitureToSpawn = 1; 
-        // non functional right now. all are spawning. TODO: fix this
-                                                
+        [SerializeField] private int howManyFurnitureToSpawn = 1;
+        [SerializeField] private int howManyItemsToSpawn = 3;
+        // non functional right now. some are spawning. TODO: fix this
+
         void Start()
         {
             AddWallPaper();
@@ -21,13 +22,15 @@ namespace AC9649
             {
                 if (howManyFurnitureToSpawn > 0)
                 {
-                    furnitureSpawners[i].GetComponent<FurnitureLogic>().SpawnFurniture();
+                    FurnitureLogic myFL = furnitureSpawners[i].GetComponent<FurnitureLogic>();
+                    myFL.SetHowManyFindableToSpawn(2); 
+                    //TODO: make the number dynamic based on how many items to spawn
+                    myFL.SpawnFurniture();
                     howManyFurnitureToSpawn--;
                 }
                 else break;
             }
         }
-
         private void AddWallPaper()
         {
             GameObject self = gameObject;
@@ -36,18 +39,13 @@ namespace AC9649
             for (int i = 0; i < howmany; i++)
             {
                 Transform child = self.transform.GetChild(i);
-                 
                 if (child.tag == "wall")
                 {
                     Renderer rend = child.GetComponent<Renderer>();
                     rend.material = wallPapers[index];
-
                 }
-
             }
-
         }
-
         public static int RandomSort(GameObject a, GameObject b)
         {
             return Random.Range(-1, 2);

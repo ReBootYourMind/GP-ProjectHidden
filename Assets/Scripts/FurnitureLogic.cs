@@ -1,4 +1,6 @@
 using AC9649;
+using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 namespace AC9649
 {
@@ -14,6 +16,14 @@ namespace AC9649
             //SpawnFurniture();
         }
 
+        public void SetHowManyFindableToSpawn(int howMany)
+        {
+            if (howMany >= 0)
+            {
+                howManyFindableToSpawn = howMany;
+            }
+        }
+
         public void SpawnFurniture()
         {
             if (!hasSpawned)
@@ -24,6 +34,17 @@ namespace AC9649
                 GameObject self = gameObject;
                 Instantiate(toSpawn, transform.position, transform.rotation, self.transform);
                 hasSpawned = true;
+                SpawnpointLogic[] mySLs = toSpawn.transform.GetComponentsInChildren<SpawnpointLogic>();
+                foreach (var item in mySLs)
+                {
+                    if (howManyFindableToSpawn > 0)
+                    {
+                        item.SpawnItem();
+                        howManyFindableToSpawn--;
+                    }
+                    else break;
+
+                }
             }
         }
     }

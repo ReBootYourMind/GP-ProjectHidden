@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1468194942326643838}
   m_Layer: 0
   m_Name: Spawnpoint
-  m_TagString: Untagged
+  m_TagString: spawnpoint
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,4 +52,4 @@ MonoBehaviour:
   - {fileID: 6372325625869210846, guid: 1f81ecc81ce68fa409a7b86b8d77b042, type: 3}
   - {fileID: 4678685311135007717, guid: d98ee3b2f32cfb742ae519d83f58fe3d, type: 3}
   - {fileID: 8206836947745537993, guid: 122d8b8767b597147a526898e7998617, type: 3}
-  cmr: {fileID: 0}
+  willItSpawn: 1

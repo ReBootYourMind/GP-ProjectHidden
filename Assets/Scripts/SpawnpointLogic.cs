@@ -9,16 +9,26 @@ namespace AC9649
         //public Camera cmr;
         [SerializeField] private GameObject[] listOfSpawnable;
         [SerializeField] private bool willItSpawn = true;
+        private bool hasItSpawned = false;
         void Start()
         {
             if (willItSpawn)
             {
+                SpawnItem();
+            }
+        }
+
+        public void SpawnItem()
+        {
+            if (!hasItSpawned)
+            {
                 int randomIndex = Random.Range(0, listOfSpawnable.Length);
                 GameObject toSpawn = listOfSpawnable[randomIndex];
                 GameObject self = gameObject;
-                //toSpawn.transform.SetParent(self.transform);
                 Instantiate(toSpawn, transform.position, transform.rotation, self.transform);
+                hasItSpawned = true;
             }
+
         }
     }
 }
