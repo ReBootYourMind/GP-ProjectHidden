@@ -11,25 +11,47 @@ namespace AC9649
         [SerializeField] private List<Material> wallPapers;
         [SerializeField] private int howManyFurnitureToSpawn = 1;
         [SerializeField] private int howManyItemsToSpawn = 3;
+        private List<int> usedSpawnerIndexes = new List<int>();
         // non functional right now. some are spawning. TODO: fix this
 
         void Start()
         {
             AddWallPaper();
-            System.Array.Sort(furnitureSpawners, RandomSort);
+            //System.Array.Sort(furnitureSpawners, RandomSort);
             // TODO: fix random; I have a feeling it doesnt work. 
-            for (int i = 0; i < furnitureSpawners.Length; i++)
+            //for (int i = 0; i < furnitureSpawners.Length; i++)
+            //{
+            //    if (howManyFurnitureToSpawn > 0)
+            //    {
+            //        FurnitureLogic myFL = furnitureSpawners[i].GetComponent<FurnitureLogic>();
+            //        myFL.SetHowManyFindableToSpawn(2); 
+            //        //TODO: make the number dynamic based on how many items to spawn
+            //        myFL.SpawnFurniture();
+            //        howManyFurnitureToSpawn--;
+            //    }
+            //    else break;
+            //}
+            for (int i = 0; i < howManyFurnitureToSpawn; i++)
             {
-                if (howManyFurnitureToSpawn > 0)
-                {
-                    FurnitureLogic myFL = furnitureSpawners[i].GetComponent<FurnitureLogic>();
-                    myFL.SetHowManyFindableToSpawn(2); 
-                    //TODO: make the number dynamic based on how many items to spawn
-                    myFL.SpawnFurniture();
-                    howManyFurnitureToSpawn--;
-                }
-                else break;
+                //Debug.Log("in loop");
+                SpawnObjectSpawnerRandomlyFromTheArray();
             }
+        }
+        private void SpawnObjectSpawnerRandomlyFromTheArray()
+        {
+            // this should prevent going into the randomiser if we do not have any spawners to spawn anymore :D
+            if (usedSpawnerIndexes.Count >= howManyFurnitureToSpawn)
+                return;
+            int randomIndex;
+            do
+            {
+                randomIndex = Random.Range(0, furnitureSpawners.Length);
+            }
+            while (usedSpawnerIndexes.Contains(randomIndex));
+
+            usedSpawnerIndexes.Add(randomIndex);
+            FurnitureLogic myFL = furnitureSpawners[randomIndex].GetComponent<FurnitureLogic>();
+            myFL.SpawnFurniture();
         }
         private void AddWallPaper()
         {
@@ -43,6 +65,7 @@ namespace AC9649
                 {
                     Renderer rend = child.GetComponent<Renderer>();
                     rend.material = wallPapers[index];
+                    //rend.material.
                 }
             }
         }

@@ -20,7 +20,7 @@ namespace AC9649
             }
             sparkle = self.GetComponentInChildren<ParticleSystem>();
         }
-        void Update()
+        void FixedUpdate()
         {
             float distance = (cmr.transform.position - self.transform.position).magnitude;
 

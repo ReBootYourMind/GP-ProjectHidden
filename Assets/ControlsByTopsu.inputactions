@@ -1,0 +1,34 @@
+{
+    "name": "ControlsByTopsu",
+    "maps": [
+        {
+            "name": "Keyboard",
+            "id": "b2d15bb9-cd44-4f69-a796-fab0ddd8d10c",
+            "actions": [
+                {
+                    "name": "CreateSonarPing",
+                    "type": "Button",
+                    "id": "a0f35c1d-7451-499f-a412-5f081050ea18",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "069c348b-5a1f-4dd4-bb6d-020ebc14262a",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CreateSonarPing",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

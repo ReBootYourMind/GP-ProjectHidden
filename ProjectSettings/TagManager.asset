@@ -49,6 +49,9 @@ TagManager:
   - name: Foreground
     uniqueID: 3922283465
     locked: 0
+  - name: Effect
+    uniqueID: 1715523157
+    locked: 0
   m_RenderingLayers:
   - Default
   - Light Layer 1

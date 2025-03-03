@@ -104,6 +104,14 @@ namespace Unity.FPS.Gameplay
         public bool IsDead { get; private set; }
         public bool IsCrouching { get; private set; }
 
+        //TODO: find my own script 
+
+        //[SerializeField] private AC9649.PlayerActionsByTopsu asd;
+        public void SonarPing()
+        {
+
+        }
+
         public float RotationMultiplier
         {
             get
@@ -320,6 +328,8 @@ namespace Unity.FPS.Gameplay
                         // force the crouch state to false
                         if (SetCrouchingState(false, false))
                         {
+                            SonarPing();
+
                             // start by canceling out the vertical component of our velocity
                             CharacterVelocity = new Vector3(CharacterVelocity.x, 0f, CharacterVelocity.z);
 
