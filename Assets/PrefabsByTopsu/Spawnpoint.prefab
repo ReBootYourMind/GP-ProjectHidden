@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1012902936073067022}
   - component: {fileID: 7002106360077573883}
   - component: {fileID: 5041626409484452763}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: ParticleSonar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
