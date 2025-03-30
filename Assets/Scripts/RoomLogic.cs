@@ -17,23 +17,8 @@ namespace AC9649
         void Start()
         {
             AddWallPaper();
-            //System.Array.Sort(furnitureSpawners, RandomSort);
-            // TODO: fix random; I have a feeling it doesnt work. 
-            //for (int i = 0; i < furnitureSpawners.Length; i++)
-            //{
-            //    if (howManyFurnitureToSpawn > 0)
-            //    {
-            //        FurnitureLogic myFL = furnitureSpawners[i].GetComponent<FurnitureLogic>();
-            //        myFL.SetHowManyFindableToSpawn(2); 
-            //        //TODO: make the number dynamic based on how many items to spawn
-            //        myFL.SpawnFurniture();
-            //        howManyFurnitureToSpawn--;
-            //    }
-            //    else break;
-            //}
             for (int i = 0; i < howManyFurnitureToSpawn; i++)
             {
-                //Debug.Log("in loop");
                 SpawnObjectSpawnerRandomlyFromTheArray();
             }
         }
@@ -65,13 +50,8 @@ namespace AC9649
                 {
                     Renderer rend = child.GetComponent<Renderer>();
                     rend.material = wallPapers[index];
-                    //rend.material.
                 }
             }
-        }
-        public static int RandomSort(GameObject a, GameObject b)
-        {
-            return Random.Range(-1, 2);
         }
     }
 }
