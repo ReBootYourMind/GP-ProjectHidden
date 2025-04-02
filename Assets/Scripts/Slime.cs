@@ -1,9 +1,11 @@
 using UnityEngine;
-
-public class Slime : Enemy
+namespace AC9649
 {
-  public override void doWarCry()
+    public class Slime : Enemy
     {
-        Debug.Log("Blörbs!");
+        public override void doWarCry()
+        {
+            Debug.Log("Blörbs!");
+        }
     }
 }

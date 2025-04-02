@@ -1,9 +1,11 @@
 using UnityEngine;
-
-public class Enemy : MonoBehaviour
+namespace AC9649
 {
-  public virtual void doWarCry()
+    public class Enemy : MonoBehaviour
     {
-        Debug.Log("RAARGH!!");
+        public virtual void doWarCry()
+        {
+            Debug.Log("RAARGH!!");
+        }
     }
 }

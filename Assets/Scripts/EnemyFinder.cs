@@ -1,33 +1,41 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class enemyfinder : MonoBehaviour
+namespace AC9649
 {
-    private GameObject[] enemies;
-    private List<Enemy> enemyList = new List<Enemy>();
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class enemyfinder : MonoBehaviour
     {
-        enemies = GameObject.FindGameObjectsWithTag("enemy");
-        foreach (GameObject enemy in enemies) 
+        private GameObject[] enemies;
+        private List<Enemy> enemyList = new List<Enemy>();
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        void Start()
         {
-            Enemy thisenemy = enemy.GetComponent<Enemy>();
-            if (thisenemy != null)
+            enemies = GameObject.FindGameObjectsWithTag("enemy");
+            foreach (GameObject enemy in enemies)
             {
-                enemyList.Add(thisenemy);
+                Enemy thisenemy = enemy.GetComponent<Enemy>();
+                if (thisenemy != null)
+                {
+                    enemyList.Add(thisenemy);
+                }
+            }
+            MakeAllEnemiesWarCry();
+            GameObject asd = GameObject.Find("King Slime");
+            if (asd != null)
+            {
+                Enemy kingSlimeEnemy = asd.GetComponent<Enemy>();
+                kingSlimeEnemy.doWarCry();
             }
         }
-        MakeAllEnemiesWarCry();
-    }
 
-    private void MakeAllEnemiesWarCry()
-    {
-        foreach (Enemy enemy in enemyList)
+        private void MakeAllEnemiesWarCry()
         {
-            enemy.doWarCry();
+            foreach (Enemy enemy in enemyList)
+            {
+                enemy.doWarCry();
+            }
+
         }
 
     }
-
 }
